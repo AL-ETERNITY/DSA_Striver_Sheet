@@ -27,14 +27,8 @@ bool isPossible(vector<int> &boards, int k, int mid)
 
 int findLargestMinDistance(vector<int> &boards, int k)
 {
-    int s = 0;
-    int sum = 0;
-    
-    for(int i = 0; i<boards.size(); i++) 
-    {
-        sum += boards[i];
-    }
-    int e = sum;
+    int s = *max_element(boards.begin(), boards.end());
+    int e = accumulate(boards.begin(), boards.end(), 0);
     int ans = -1;
     int mid = s + (e-s)/2;
     
