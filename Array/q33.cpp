@@ -15,7 +15,7 @@ int maxLen(vector<int>& arr) {
     for (int i = 0; i < arr.size(); i++) {
         sum += arr[i];
 
-        // Check if there is a prefix sum that makes the subarray sum equal to k
+        // Check if there is a prefix sum that makes the subarray sum equal to 0
         if (prefixSumMap.find(sum - 0) != prefixSumMap.end()) {
             maxLength = max(maxLength, i - prefixSumMap[sum - 0]);
         }
