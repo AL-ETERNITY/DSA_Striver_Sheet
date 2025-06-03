@@ -1,4 +1,4 @@
-// implementing next smaller element using stack
+// implementing previous smaller element using stack
 #include <iostream>
 #include <vector>
 #include <stack>
