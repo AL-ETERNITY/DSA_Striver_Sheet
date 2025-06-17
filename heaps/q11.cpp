@@ -34,3 +34,26 @@ public:
         else return false;
     }
 };
+
+// class Solution {
+// public:
+//     bool isPossibleDivide(vector<int>& nums, int k) {
+//         int n = nums.size();
+//         if ((n % k) != 0) return false;
+
+//         unordered_map<int, int> mp;
+//         for (int num : nums) mp[num]++;
+//         sort(nums.begin(), nums.end());
+
+//         for (int i = 0; i < nums.size(); i++) {
+//             if (mp[nums[i]] == 0) continue;
+//             mp[nums[i]]--;
+            
+//             for (int j = 1; j < k; j++) {
+//                 if (mp[nums[i] + j] == 0) return false;
+//                 else mp[nums[i] + j]--;
+//             }
+//         }
+//         return true;
+//     }
+// };
