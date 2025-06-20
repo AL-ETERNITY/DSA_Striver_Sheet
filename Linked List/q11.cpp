@@ -29,22 +29,3 @@ public:
         return prev;
     }
 };
-
-// function to solve the problem of reversing a singly linked list using recursion
-class Solution {
-private:
-    ListNode* rev(ListNode* prev, ListNode* curr) {
-        if(curr == NULL) return prev;
-
-        ListNode* forward = curr -> next;
-        curr -> next = prev;
-        return rev(curr, forward);
-    }
-public:
-    ListNode* reverseList(ListNode* head) {
-        if(head == NULL) return head;
-        ListNode* curr = head -> next;
-        head -> next = NULL;
-        return rev(head, curr);
-    }
-};
