@@ -61,7 +61,7 @@ public:
         
         prev[0] = curr[0] = true;
         
-        prev[arr[0]] = true;
+        if(arr[0] <= sum) prev[arr[0]] = true;
 
         for(int i=1;i<n;i++){
             for(int j=1;j<=sum;j++){
