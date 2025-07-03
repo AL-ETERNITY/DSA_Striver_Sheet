@@ -1,4 +1,4 @@
-// function to solve the problem of finding the shortest path in an unweighted graph using BFS
+// function to solve the problem of finding the shortest path in an undirected unweighted graph using BFS
 #include <bits/stdc++.h>
 using namespace std;
 

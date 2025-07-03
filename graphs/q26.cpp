@@ -1,4 +1,4 @@
-// function to solve the problem of finding the shortest path in a directed acyclic graph (DAG) using topological sorting
+// function to solve the problem of finding the shortest path in a directed acyclic weighted graph (DAG) using topological sorting
 #include <bits/stdc++.h>
 using namespace std;
 
