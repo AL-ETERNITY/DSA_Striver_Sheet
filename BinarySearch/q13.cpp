@@ -2,24 +2,41 @@
 using namespace std;
 
 class Solution {
-    public:
-      int singleNonDuplicate(vector<int>& nums) {
-          int l = 0;
-          int r = nums.size() - 1;
-          int n = nums.size();
-  
-          while(l <= r){
-              if(l+1 < n && nums[l] == nums[l+1]){
-                  l+=2;
-              }else{
-                  return nums[l];
-              }
-              if(r-1 >= 0 && nums[r] == nums[r-1]){
-                  r-=2;
-              }else{
-                  return nums[r];
-              }
-          }
-          return -1;
-      }
-  };
+    int singleNonDuplicate(vector<int>& nums) {
+        if (nums.size() == 1) {
+            return nums[0];
+        }
+        if (nums[0] != nums[1]) {
+            return nums[0];
+        }
+        if (nums[nums.size() - 1] != nums[nums.size() - 2]) {
+            return nums[nums.size() - 1];
+        }
+
+        int left = 1;
+        int right = nums.size() - 2;
+
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+
+            if (nums[mid] != nums[mid - 1] && nums[mid] != nums[mid + 1]) {
+                return nums[mid];
+            } 
+            else if (nums[mid] == nums[mid - 1]) {
+                if (mid % 2 == 1) {
+                    left = mid + 1;
+                } else {
+                    right = mid - 1;
+                }
+            } 
+            else if (nums[mid] == nums[mid + 1]) {
+                if (mid % 2 == 0) {
+                    left = mid + 1;
+                } else {
+                    right = mid - 1;
+                }
+            }
+        }
+        return -1; 
+    }
+};
