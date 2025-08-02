@@ -1,7 +1,4 @@
 // implementation of infix to prefix conversion using stack
-#include <iostream>
-#include <stack>
-#include <string>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -22,7 +19,7 @@ class Solution{
             }
         }
     public: 
-        string infixToPrefix(string& s){
+        string infixToPrefix(string s){
             stack<char> st;
             int i = 0;
             int n = s.length();
@@ -54,12 +51,20 @@ class Solution{
                         ans += st.top();
                         st.pop();
                     }
-                    st.pop();
+                    if(!st.empty()) st.pop();
                 }
                 else{
-                    while(!st.empty() && (priority(st.top()) >= priority(s[i]))){
-                        ans += st.top();
-                        st.pop();
+                    if(s[i] == '^'){
+                        while(!st.empty() && (priority(st.top()) >= priority(s[i]))){
+                            ans += st.top();
+                            st.pop();
+                        }
+                    }
+                    else{
+                        while(!st.empty() && (priority(st.top()) > priority(s[i]))){
+                            ans += st.top();
+                            st.pop();
+                        }
                     }
                     st.push(s[i]);
                 }
