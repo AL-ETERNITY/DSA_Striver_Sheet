@@ -29,6 +29,6 @@ public:
             after = curr;  // move to the previous day
         }
 
-        return after[1][k];  // start with buy allowed and 2 transactions
+        return after[1][k];  // start with buy allowed and k transactions
     }
 };
